@@ -8,7 +8,7 @@ public class Bunk {
     private UUID mId;
     private String mTitle;
     private Date mDate;
-    private  Calendar mDay;
+    private  String mDay;
     private Boolean mChecked;
 
     public UUID getId() {
@@ -35,11 +35,11 @@ public class Bunk {
         mDate = date;
     }
 
-    public Calendar getDay() {
+    public String getDay() {
         return mDay;
     }
 
-    public void setDay(Calendar day) {
+    public void setDay(String day) {
         mDay = day;
     }
 
