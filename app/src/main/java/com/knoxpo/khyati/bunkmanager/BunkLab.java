@@ -1,6 +1,9 @@
 package com.knoxpo.khyati.bunkmanager;
 
 import android.content.Context;
+import android.text.format.DateFormat;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,11 +24,13 @@ public class BunkLab {
         mBunks = new ArrayList<Bunk>();
 
         int totalDay=Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        String dayOfTheWeek = sdf.format(d);
 
-
-        for (int i = 0; i <totalDay ; i++) {
+        for (int i = 1; i <totalDay ; i++) {
                 Bunk bunk = new Bunk();
-                bunk.setTitle(""+i);
+                bunk.setDay(dayOfTheWeek);
                 mBunks.add(bunk);
         }
     }
