@@ -1,10 +1,13 @@
+package com.knoxpo.khyati.bunkmanager;
+
 import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 public class Bunk {
     private UUID mId;
     private String mTitle;
-    private Calendar mDate;
+    private Date mDate;
     private  Calendar mDay;
     private Boolean mChecked;
 
@@ -24,11 +27,11 @@ public class Bunk {
         mTitle = title;
     }
 
-    public Calendar getDate() {
+    public Date getDate() {
         return mDate;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(Date date) {
         mDate = date;
     }
 
@@ -40,7 +43,7 @@ public class Bunk {
         mDay = day;
     }
 
-    public Boolean getChecked() {
+    public Boolean getChecked(boolean isChecked) {
         return mChecked;
     }
 
@@ -51,6 +54,6 @@ public class Bunk {
     public Bunk()
     {
         mId = UUID.randomUUID();
-        mDate = Calendar.getInstance();
+        mDate = new Date();
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:orientation="vertical">
@@ -14,7 +14,6 @@
                 android:id="@+id/day"
                 android:fontFamily="cursive"
                 android:textStyle="bold"
-                android:textSize="20dp"
                 style="?android:listSeparatorTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -24,7 +23,6 @@
                 android:id="@+id/date"
                 android:fontFamily="cursive"
                 android:textStyle="bold"
-                android:textSize="20dp"
                 style="?android:listSeparatorTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -32,14 +30,18 @@
 
 
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <CheckBox
             android:fontFamily="cursive"
             android:textStyle="bold"
-            android:textSize="20dp"
-            android:id="@+id/crime_solved"
+            android:id="@+id/checked"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="225dp"
+            android:layout_gravity="right"
             android:text="@string/buncked_checked_label"/>
+    </LinearLayout>
 
     </LinearLayout>
