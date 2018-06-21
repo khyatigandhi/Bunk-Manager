@@ -6,10 +6,20 @@ import java.util.UUID;
 
 public class Bunk {
     private UUID mId;
-    private String mTitle;
     private Date mDate;
-    private  String mDay;
-    private Boolean mChecked;
+    private boolean mChecked;
+
+
+    public Bunk()
+    {
+
+        this(new Date());
+    }
+
+    public Bunk(Date date){
+        mId = UUID.randomUUID();
+        mDate = date;
+    }
 
     public UUID getId() {
         return mId;
@@ -17,14 +27,6 @@ public class Bunk {
 
     public void setId(UUID id) {
         mId = id;
-    }
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        mTitle = title;
     }
 
     public Date getDate() {
@@ -35,25 +37,13 @@ public class Bunk {
         mDate = date;
     }
 
-    public String getDay() {
-        return mDay;
-    }
-
-    public void setDay(String day) {
-        mDay = day;
-    }
-
-    public Boolean getChecked(boolean isChecked) {
+    public boolean isChecked() {
         return mChecked;
     }
 
-    public void setChecked(Boolean checked) {
+    public void setChecked(boolean checked) {
         mChecked = checked;
     }
 
-    public Bunk()
-    {
-        mId = UUID.randomUUID();
-        mDate = new Date();
-    }
+
 }

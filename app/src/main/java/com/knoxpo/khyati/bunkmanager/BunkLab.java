@@ -14,33 +14,36 @@ public class BunkLab {
     private static BunkLab sBunkLab;
     private List<Bunk> mBunks;
 
-    public static BunkLab get(Context context){
-        if(sBunkLab == null){
+    public static BunkLab get(Context context) {
+        if (sBunkLab == null) {
             sBunkLab = new BunkLab(context);
         }
         return sBunkLab;
     }
+
     private BunkLab(Context context) {
         mBunks = new ArrayList<Bunk>();
 
-        int totalDay=Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
-        Date d = new Date();
-        String dayOfTheWeek = sdf.format(d);
+        int totalDay = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
 
-        for (int i = 1; i <totalDay ; i++) {
-                Bunk bunk = new Bunk();
-                bunk.setDay(dayOfTheWeek);
-                mBunks.add(bunk);
+        for (int i = 0; i < totalDay; i++) {
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.DATE, (i + 1));
+
+            Date date = calendar.getTime();
+            Bunk bunk = new Bunk(date);
+            mBunks.add(bunk);
         }
     }
 
     public List<Bunk> getBunks() {
         return mBunks;
     }
-    public Bunk getBunk(UUID id){
-        for (Bunk bunk:mBunks){
-            if(bunk.getId().equals(id)) {
+
+    public Bunk getBunk(UUID id) {
+        for (Bunk bunk : mBunks) {
+            if (bunk.getId().equals(id)) {
                 return bunk;
             }
         }
